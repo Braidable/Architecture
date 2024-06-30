@@ -2,7 +2,7 @@
 
 ## Service Overview
 1. **API Gateway**: Central routing layer for all incoming requests.
-2. **NLP Service**: Processes natural language queries and determines user intent.
+2. **Natural Language Processor**: Processes natural language queries and determines user intent.
 3. **Session Service**: Manages session state, including creation, retrieval, and updates.
 4. **Question Service**: Manages dynamic question flow during the Q&A process.
 5. **Query Construction Service**: Constructs e-commerce queries based on user inputs.
@@ -12,14 +12,14 @@
 ### 1. API Gateway (Azure API Management)
 - **Responsibilities**: 
   - Acts as the central routing layer for all incoming requests.
-  - Forwards requests to appropriate backend services (NLP Service, Session Service, Question Service, Query Construction Service, E-commerce Integration Service).
+  - Forwards requests to appropriate backend services (Natural Language Processor, Session Service, Question Service, Query Construction Service, E-commerce Integration Service).
   - Returns responses from backend services to the frontend.
 - **Usage**:
   - Receives all user queries and interactions from the frontend.
   - **Does not maintain any state or session information.**
   - Purely routes requests and responses between the frontend and backend services.
 
-### 2. NLP Service (Azure OpenAI)
+### 2. Natural Language Processor (Azure OpenAI)
 - **Responsibilities**:
   - Processes natural language queries to determine user intent.
   - Provides refined queries based on user feedback.
@@ -78,7 +78,7 @@ sequenceDiagram
     participant UI as "Web App (UI)"
     participant Frontend as "Frontend Service"
     participant APIGateway as "API Gateway"
-    participant NLPService as "NLP Service"
+    participant NLPService as "Natural Language Processor"
     participant SessionService as "Session Service"
     participant QuestionService as "Question Service"
 
@@ -106,7 +106,7 @@ sequenceDiagram
     participant UI as "Web App (UI)"
     participant Frontend as "Frontend Service"
     participant APIGateway as "API Gateway"
-    participant NLPService as "NLP Service"
+    participant NLPService as "Natural Language Processor"
     participant SessionService as "Session Service"
     participant QueryService as "Query Construction Service"
     participant EcomService as "E-commerce Integration Service"
@@ -141,7 +141,7 @@ sequenceDiagram
     participant UI as "Web App (UI)"
     participant Frontend as "Frontend Service"
     participant APIGateway as "API Gateway"
-    participant NLPService as "NLP Service"
+    participant NLPService as "Natural Language Processor"
     participant SessionService as "Session Service"
     participant QuestionService as "Question Service"
 
@@ -167,7 +167,7 @@ sequenceDiagram
     participant UI as "Web App (UI)"
     participant Frontend as "Frontend Service"
     participant APIGateway as "API Gateway"
-    participant NLPService as "NLP Service"
+    participant NLPService as "Natural Language Processor"
     participant SessionService as "Session Service"
     participant QuestionService as "Question Service"
 
@@ -196,7 +196,7 @@ sequenceDiagram
     participant UI as "Web App (UI)"
     participant Frontend as "Frontend Service"
     participant APIGateway as "API Gateway"
-    participant NLPService as "NLP Service"
+    participant NLPService as "Natural Language Processor"
     participant SessionService as "Session Service"
 
     User ->> UI: "(New Intent) I want headphones"
@@ -231,7 +231,7 @@ sequenceDiagram
     participant UI as "Web App (UI)"
     participant Frontend as "Frontend Service"
     participant APIGateway as "API Gateway"
-    participant NLPService as "NLP Service"
+    participant NLPService as "Natural Language Processor"
     participant SessionService as "Session Service"
     participant QueryService as "Query Construction Service"
     participant EcomService as "E-commerce Integration Service"
@@ -266,7 +266,7 @@ sequenceDiagram
     participant UI as "Web App (UI)"
     participant Frontend as "Frontend Service"
     participant APIGateway as "API Gateway"
-    participant NLPService as "NLP Service"
+    participant NLPService as "Natural Language Processor"
     participant SessionService as "Session Service"
     participant QuestionService as "Question Service"
 
@@ -287,9 +287,9 @@ sequenceDiagram
 ## API Endpoints
 ### API Gateway (Azure API Management)
 1. **`/api/userInteraction`**
-   - **Description**: Receives user input (whether it's a query or feedback), routes it to the appropriate backend services (NLP Service, Session Service, Question Service, Query Construction Service) for processing.
+   - **Description**: Receives user input (whether it's a query or feedback), routes it to the appropriate backend services (Natural Language Processor, Session Service, Question Service, Query Construction Service) for processing.
 
-### NLP Service (Azure OpenAI)
+### Natural Language Processor (Azure OpenAI)
 1. **`/nlp/determineIntent`**
    - **Description**: Determines user intent from the input query and standardizes the message format.
 
@@ -319,7 +319,7 @@ sequenceDiagram
     participant UI as "Web App (UI)"
     participant Frontend as "Frontend Service"
     participant APIGateway as "API Gateway"
-    participant NLPService as "NLP Service"
+    participant NLPService as "Natural Language Processor"
     participant SessionService as "Session Service"
     participant QueryService as "Query Construction Service"
     participant QuestionService as "Question Service"
